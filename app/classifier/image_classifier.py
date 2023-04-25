@@ -33,9 +33,10 @@ class ImageClassifier:
       
 
         self.model.fc = nn.Linear(1024, len(self.classes))
-        self.model = to_device(self.model, self.device)
+        if torch.cuda.is_available():
+            self.model = to_device(self.model, self.device)
 
-        self.model.load_state_dict(torch.load(model_path))
+        self.model.load_state_dict(torch.load(model_path, map_location=self.device))
         self.model.eval()
         
         # Configurar la transformación de las imágenes
@@ -58,7 +59,10 @@ class ImageClassifier:
         
         #Pasar la imagen por el modelo
         with torch.no_grad():
-            output = self.model(image_tensor.to(self.device))
+            if torch.cuda.is_available():
+                output = self.model(image_tensor.to(self.device))
+            else:
+                output = self.model(image_tensor)
             probabilities = torch.softmax(output, dim=1)[0]
         
         # Obtener la clase con mayor probabilidad

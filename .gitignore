@@ -1,2 +1,4 @@
 trained_knn_model.clf
 models/
+object-clasification/
+Dataset/

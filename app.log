@@ -1,0 +1,17 @@
+[2023-04-25 00:30:42 -0500] [164709] [INFO] Starting gunicorn 20.1.0
+[2023-04-25 00:30:42 -0500] [164709] [INFO] Listening at: http://0.0.0.0:5000 (164709)
+[2023-04-25 00:30:42 -0500] [164709] [INFO] Using worker: sync
+[2023-04-25 00:30:42 -0500] [164718] [INFO] Booting worker with pid: 164718
+[2023-04-25 00:30:42 -0500] [164719] [INFO] Booting worker with pid: 164719
+[2023-04-25 00:30:42 -0500] [164720] [INFO] Booting worker with pid: 164720
+[2023-04-25 00:30:42 -0500] [164721] [INFO] Booting worker with pid: 164721
+[2023-04-25 00:32:53 -0500] [164718] [INFO] Worker exiting (pid: 164718)
+[2023-04-25 00:32:53 -0500] [164721] [INFO] Worker exiting (pid: 164721)
+[2023-04-25 00:32:53 -0500] [164720] [INFO] Worker exiting (pid: 164720)
+[2023-04-25 00:32:53 -0500] [164719] [INFO] Worker exiting (pid: 164719)
+[2023-04-25 00:32:53 -0500] [164709] [INFO] Handling signal: term
+[2023-04-25 00:32:53 -0500] [164709] [WARNING] Worker with pid 164718 was terminated due to signal 15
+[2023-04-25 00:32:53 -0500] [164709] [WARNING] Worker with pid 164721 was terminated due to signal 15
+[2023-04-25 00:32:53 -0500] [164709] [WARNING] Worker with pid 164719 was terminated due to signal 15
+[2023-04-25 00:32:53 -0500] [164709] [WARNING] Worker with pid 164720 was terminated due to signal 15
+[2023-04-25 00:32:53 -0500] [164709] [INFO] Shutting down: Master

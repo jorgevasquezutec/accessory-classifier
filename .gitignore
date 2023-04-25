@@ -4,3 +4,5 @@ object-clasification/
 Dataset/
 **/.ipynb_checkpoints
 **/__pycache__/*
+__pycache__/
+app/classifier/__pycache__/*

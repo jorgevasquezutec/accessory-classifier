@@ -63,16 +63,20 @@ def predict():
     try:
         file = request.files['file']
         # faceRecognizer.FaceRecognizer().insert_face(user_id, file)
-        predicted_class = image_classifier.ImageClassifier(
+        predicted_classes = image_classifier.ImageClassifier(
             'db/model.pth', 'db/classes.txt').predict(file)
-        print(predicted_class)
+        #print(predicted_class)
         # current url
-        url = request.url_root + 'image/' + predicted_class
-        message = {'message': 'Predicted class',
-                   'class': predicted_class,
-                   'url': url
-                   }
-        json_msg = json.dumps(message)
+        retornar_message = []
+        for predicted_class in predicted_classes:
+            print(elemento)
+            url = request.url_root + 'image/' + predicted_class
+            message = {'message': 'Predicted class',
+                       'class': predicted_class,
+                       'url': url
+                       }
+            retornar_message.append(message)
+        json_msg = json.dumps(retornar_message)
         return Response(json_msg, status=200, mimetype="application/json")
     except Exception as e:
         print(e)

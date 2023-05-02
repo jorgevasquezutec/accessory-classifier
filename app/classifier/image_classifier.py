@@ -66,7 +66,12 @@ class ImageClassifier:
             probabilities = torch.softmax(output, dim=1)[0]
         
         # Obtener la clase con mayor probabilidad
-        predicted_class_idx = torch.argmax(probabilities).item()
-        predicted_class = self.classes[predicted_class_idx]
-        
-        return predicted_class
+        #predicted_class_idx = torch.argmax(probabilities).item()
+        #predicted_class = self.classes[predicted_class_idx]
+
+        # Obtener los índices de las tres clases con mayor probabilidad
+        top3_prob, top3_idx = torch.topk(probabilities, k=3)
+        # Obtener las clases correspondientes a los índices
+        predicted_classes = [self.classes[idx] for idx in top3_idx.tolist()]
+        return predicted_classes
+        #return predicted_class

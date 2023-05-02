@@ -69,7 +69,6 @@ def predict():
         # current url
         retornar_message = []
         for predicted_class in predicted_classes:
-            print(elemento)
             url = request.url_root + 'image/' + predicted_class
             message = {'message': 'Predicted class',
                        'class': predicted_class,

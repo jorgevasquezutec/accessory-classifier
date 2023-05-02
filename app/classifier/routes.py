@@ -68,7 +68,7 @@ def predict():
         #print(predicted_class)
         # current url
         retornar_message = []
-        for predicted_class, probability in predicted_classes:
+        for predicted_class, probability in predicted_classes.items():
             url = request.url_root + 'image/' + predicted_class
             message = {'message': 'Predicted class',
                        'class': predicted_class,
